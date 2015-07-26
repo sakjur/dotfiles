@@ -1,0 +1,10 @@
+host bb
+  hostname bitbucket.org
+  user git
+  port 22
+
+host gh
+  hostname github.com
+  user git
+  port 22
+
