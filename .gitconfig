@@ -1,10 +1,13 @@
 [core]
     pager = less -NRJ
+    editor = vim
 [user]
 	name = Emil Tullstedt
-	email = sakjur@gmail.com 
+	email = sakjur@gmail.com
 [push]
     default = simple
+[pull]
+    rebase = true
 [merge]
     conflictstyle = diff3
 [color]
@@ -33,4 +36,6 @@
     co = checkout
     df = diff
     lg = log --oneline --graph --decorate
+[help]
+    autocorrect = 20
 
