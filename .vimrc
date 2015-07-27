@@ -50,8 +50,10 @@ set autoread " Re-read the file if the file is edited outside
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Swedish Keyboard has this worthless button. Let's map 'em! "
+" OS X has the ° instead of ½, so let's map that too.        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap ½ :tabprevious<CR>
+nnoremap ° :tabprevious<CR>
 nnoremap § :tabnext<CR>
 
 noremap <C-Left> <C-W><Left>
