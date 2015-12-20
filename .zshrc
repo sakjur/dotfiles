@@ -16,6 +16,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/opt/$USER/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 # export MANPATH="/usr/local/man:$MANPATH"
+alias pyenv="source env/bin/activate"
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

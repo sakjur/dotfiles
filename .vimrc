@@ -1,5 +1,5 @@
 set nocompatible
-filetype plugin indent on
+let g:Imap_FreezeImap=1
 
 syntax on
 set number
@@ -7,10 +7,6 @@ set relativenumber " Avoid headmaths :P
 set colorcolumn=80
 set laststatus=2
 highlight ColorColumn ctermbg=17
-
-if has('mouse')
-    set mouse=a
-endif
 
 try
     colo vividchalk
@@ -31,9 +27,9 @@ set listchars=tab:↹·,extends:⇉,precedes:⇇,nbsp:␠,trail:␠,nbsp:␣
 """"""""""""""""""""""""""""""""""
 " Lots of stuff with indentation "
 """"""""""""""""""""""""""""""""""
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set shiftround
 set expandtab
 set autoindent
@@ -70,11 +66,33 @@ highlight DiffText ctermbg=53
 " Force Markdown on *.md "
 """"""""""""""""""""""""""
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.pl set filetype=prolog
+autocmd BufNewFile,BufReadPost *.hsc set filetype=haskell
+
+""""""""""""""""""""""""""
+" Custom Digraphs        "
+""""""""""""""""""""""""""
+digraph ZZ 8484
+digraph la 0955
 
 """"""""""""""""""""""""""
 " Plugins using Pathogen "
 """"""""""""""""""""""""""
-execute pathogen#infect()
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+" Other plugins
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
+Plugin 'fsharp/vim-fsharp'
+Plugin 'jimenezrick/vimerl'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-characterize'
+call vundle#end()
+filetype plugin indent on
 
 let g:airline_theme='kolor'
 
@@ -84,4 +102,6 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
-
+let g:ctrlp_custom_ignore = '.git\|env'
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+autocmd BufEnter * set mouse=
