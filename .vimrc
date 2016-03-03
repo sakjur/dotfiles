@@ -94,8 +94,6 @@ Plugin 'tpope/vim-characterize'
 call vundle#end()
 filetype plugin indent on
 
-let g:airline_theme='kolor'
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_prompt_mappings = {
