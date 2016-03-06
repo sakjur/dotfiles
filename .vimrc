@@ -11,7 +11,7 @@ highlight ColorColumn ctermbg=17
 try
     colo vividchalk
 catch /^Vim\%((\a\+)\)\=:E185/
-    colo delek
+    colo torte
 endtry
 
 """"""""""""""""""""""""""""""""""
@@ -91,6 +91,7 @@ Plugin 'jimenezrick/vimerl'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-characterize'
+Plugin 'tpope/vim-vividchalk'
 call vundle#end()
 filetype plugin indent on
 

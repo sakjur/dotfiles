@@ -28,6 +28,14 @@
       dnf: name=mosh state=latest
       become: true
 
+    - name: install tlp
+      dnf: name=tlp state=latest
+      become: true
+
+    - name: install powertop 
+      dnf: name=powertop state=latest
+      become: true
+
     - name: upgrade all
       dnf: name=* state=latest
       become: true
