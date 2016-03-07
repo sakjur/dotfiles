@@ -8,33 +8,17 @@
   become_user: root 
 
   tasks:
-    - name: install vim
-      dnf: name=vim state=latest
+    - name: install standard set of applications
+      dnf: name={{ item }} state=latest
       become: true
-
-    - name: install zsh
-      dnf: name=zsh state=latest
-      become: true
-
-    - name: install tmux
-      dnf: name=tmux state=latest
-      become: true
-
-    - name: install git
-      dnf: name=git state=latest
-      become: true
-
-    - name: install mosh
-      dnf: name=mosh state=latest
-      become: true
-
-    - name: install tlp
-      dnf: name=tlp state=latest
-      become: true
-
-    - name: install powertop 
-      dnf: name=powertop state=latest
-      become: true
+      with_items:
+        - vim
+        - zsh
+        - tmux
+        - git
+        - mosh
+        - tlp
+        - powertop
 
     - name: upgrade all
       dnf: name=* state=latest
