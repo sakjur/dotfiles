@@ -1,13 +1,20 @@
 set nocompatible
 let g:Imap_FreezeImap=1
+let mapleader = "-"
 
+""""""""""""""""""""""""""""""""""""""""""""
+" Numbers, colors and those kind of things "
+""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 set number
 set relativenumber " Avoid headmaths :P
 set colorcolumn=80
 set laststatus=2
-highlight ColorColumn ctermbg=17
+highlight ColorColumn ctermbg=245
 
+"""""""""
+" color "
+"""""""""
 try
     colo vividchalk
 catch /^Vim\%((\a\+)\)\=:E185/
@@ -71,9 +78,16 @@ autocmd BufNewFile,BufReadPost *.hsc set filetype=haskell
 
 """"""""""""""""""""""""""
 " Custom Digraphs        "
+" <CTRL+K> in imode      "
 """"""""""""""""""""""""""
 digraph ZZ 8484
 digraph la 0955
+
+""""""""""""""""""""
+" Custom shortcuts "
+""""""""""""""""""""
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 """"""""""""""""""""""""""
 " Plugins using Pathogen "

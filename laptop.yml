@@ -24,6 +24,10 @@
       dnf: name=* state=latest
       become: true
 
+    - name: install elkme
+      pip: name=elkme state=latest
+      become: true
+
     - name: get dotfiles
       git: repo=https://github.com/sakjur/dotfiles.git dest=~/.dotfiles
 
