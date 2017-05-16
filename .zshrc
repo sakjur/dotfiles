@@ -36,6 +36,7 @@ setopt extended_history hist_no_store hist_ignore_dups hist_expire_dups_first hi
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000
 export SAVEHIST=1000000
+export GOPATH=~/projects/go
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

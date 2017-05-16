@@ -25,12 +25,11 @@ set listchars=tab:↹·,extends:⇉,precedes:⇇,nbsp:␠,trail:␠,nbsp:␣
 """"""""""""""""""""""""""""""""""
 " Lots of stuff with indentation "
 """"""""""""""""""""""""""""""""""
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set shiftround
 set expandtab
-set autoindent
 
 """""""""
 " UTF-8 "
@@ -94,7 +93,6 @@ Plugin 'fatih/vim-go'
 Plugin 'fsharp/vim-fsharp'
 Plugin 'jimenezrick/vimerl'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-characterize'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'kchmck/vim-coffee-script'
@@ -104,6 +102,10 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'peterhoeg/vim-qml'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-static'
+Plugin 'HerringtonDarkholme/vim-worksheet'
+Plugin 'Superbil/llvm.vim'
+Plugin 'arrufat/vala.vim'
+Plugin 'derekwyatt/vim-scala'
 call vundle#end()
 filetype plugin indent on
 
@@ -122,7 +124,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
-let g:ctrlp_custom_ignore = '.git\|env'
+let g:ctrlp_custom_ignore = '.git\|env\|target'
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 autocmd BufEnter * set mouse=
 
@@ -137,4 +139,17 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " autocmd VimEnter,Colorscheme * :IndentGuidesEnable
+
+function! Elkme(line)
+  let cmd = '/usr/bin/elkme -q --from Vim'
+  let msg = getline(a:line)
+  call system(cmd, [msg])
+endfunction
+
+if(!exists(":SMS"))
+  command SMS call Elkme(line("."))
+  nnoremap <leader>s :SMS<cr>
+else
+  echomsg "Error loading Elkme for Vim: Command SMS already exists"
+endif
 
