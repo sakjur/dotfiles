@@ -1,0 +1,12 @@
+---
+- name: install standard set of applications
+  dnf: name={{ item }} state=latest
+  become: true
+  with_items:
+      - vim
+      - zsh
+      - tmux
+      - git
+      - mosh
+      - tlp
+      - powertop

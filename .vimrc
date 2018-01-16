@@ -25,9 +25,9 @@ set listchars=tab:↹·,extends:⇉,precedes:⇇,nbsp:␠,trail:␠,nbsp:␣
 """"""""""""""""""""""""""""""""""
 " Lots of stuff with indentation "
 """"""""""""""""""""""""""""""""""
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set shiftround
 set expandtab
 
@@ -89,23 +89,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Other plugins
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
-Plugin 'fatih/vim-go'
-Plugin 'fsharp/vim-fsharp'
-Plugin 'jimenezrick/vimerl'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-characterize'
 Plugin 'tpope/vim-vividchalk'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'exu/pgsql.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'peterhoeg/vim-qml'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'guns/vim-clojure-static'
-Plugin 'HerringtonDarkholme/vim-worksheet'
-Plugin 'Superbil/llvm.vim'
-Plugin 'arrufat/vala.vim'
-Plugin 'derekwyatt/vim-scala'
 call vundle#end()
 filetype plugin indent on
 
@@ -131,7 +119,7 @@ autocmd BufEnter * set mouse=
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=90
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=94
 au VimEnter * RainbowParenthesesActivate

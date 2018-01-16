@@ -1,0 +1,42 @@
+# Fedora only # dnf install -y ansible python2 python2-dnf libselinux-python
+# # ansible-playbook laptop.yml -c local -K
+---
+
+- name: Set up sakjur's laptop
+  hosts: localhost
+  remote_user: sakjur
+  become_user: root 
+
+  roles:
+      - laptop
+
+  tasks:
+      - name: install elkme
+        pip: name=elkme state=latest
+        become: true
+
+      - name: get vundle
+        git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
+
+      - name: set ~/.vimrc as a softlink to dotfiles
+        file: dest=~/.vimrc src=.dotfiles/.vimrc state=link
+
+      - name: install oh-my-zsh
+        git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+
+      - name: set ~/.zshrc as a softlink to dotfiles
+        file: dest=~/.zshrc src=.dotfiles/.zshrc state=link
+
+      - name: set default shell to zsh
+        user: name=sakjur shell=/usr/bin/zsh
+        become: true
+
+      - name: set ~/.tmux.conf as a softlink to dotfiles
+        file: dest=~/.tmux.conf src=.dotfiles/.tmux.conf state=link
+
+      - name: set ~/.gitconfig as a softlink to dotfiles
+        file: dest=~/.gitconfig src=.dotfiles/.gitconfig state=link
+
+      - name: create projects directory
+        file: path=~/projects state=directory
+
