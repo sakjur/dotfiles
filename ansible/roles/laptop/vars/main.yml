@@ -10,4 +10,5 @@ packages:
     - cowsay
 packages_ubuntu:
     - python-pip
+    - silversearcher-ag
 packages_fedora:

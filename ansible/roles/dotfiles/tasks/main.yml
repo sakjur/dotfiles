@@ -1,13 +1,18 @@
 ---
 - name: set ~/.vimrc as a softlink to dotfiles
-  file: dest=~/.vimrc src=.dotfiles/.vimrc state=link
+  file: dest=~/.vimrc src=~/.dotfiles/.vimrc state=link
 
 - name: set ~/.zshrc as a softlink to dotfiles
-  file: dest=~/.zshrc src=.dotfiles/.zshrc state=link
+  file: dest=~/.zshrc src=~/.dotfiles/.zshrc state=link
 
 - name: set ~/.tmux.conf as a softlink to dotfiles
-  file: dest=~/.tmux.conf src=.dotfiles/.tmux.conf state=link
+  file: dest=~/.tmux.conf src=~/.dotfiles/.tmux.conf state=link
 
 - name: set ~/.gitconfig as a softlink to dotfiles
-  file: dest=~/.gitconfig src=.dotfiles/.gitconfig state=link
+  file: dest=~/.gitconfig src=~/.dotfiles/.gitconfig state=link
 
+- name: create .ssh directory
+  file: path=~/.ssh state=directory
+
+- name: set ~/.ssh/config as a softlink to dotfiles
+  file: dest=~/.ssh/config src=~/.dotfiles/sshconfig state=link

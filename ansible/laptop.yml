@@ -9,6 +9,7 @@
 
   roles:
       - laptop
+      - dotfiles
 
   tasks:
       - name: set default shell to zsh
