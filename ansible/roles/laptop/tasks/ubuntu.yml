@@ -1,13 +1,7 @@
 ---
-- name: install standard set of applications
+- name: install standard set of applications (Ubuntu)
   apt: name={{ item }} state=latest
   become: true
   with_items:
-      - vim
-      - zsh
-      - tmux
-      - git
-      - mosh
-      - tlp
-      - powertop
-      - python-pip
+      - "{{ packages }}"
+      - "{{ packages_ubuntu }}"

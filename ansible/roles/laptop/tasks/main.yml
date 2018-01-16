@@ -1,6 +1,16 @@
 ---
 - include: fedora.yml
   when: ansible_distribution == 'Fedora'
+
 - include: ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
 
+- name: install elkme
+  pip: name=elkme state=latest
+  become: true
+
+- name: get vundle
+  git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
+
+- name: install oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh

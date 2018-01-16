@@ -1,0 +1,13 @@
+---
+packages:
+    - vim
+    - zsh
+    - tmux
+    - git
+    - mosh
+    - tlp
+    - powertop
+    - cowsay
+packages_ubuntu:
+    - python-pip
+packages_fedora:
