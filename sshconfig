@@ -1,8 +1,3 @@
-host bb bitbucket.org
-  hostname bitbucket.org
-  IdentityFile ~/.ssh/github
-  user git
-
 host gh github.com
   hostname github.com
   IdentityFile ~/.ssh/github

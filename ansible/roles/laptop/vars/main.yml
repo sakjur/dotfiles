@@ -13,3 +13,4 @@ packages_ubuntu:
     - silversearcher-ag
 packages_fedora:
     - the_silver_searcher
+    - lastpass-cli
