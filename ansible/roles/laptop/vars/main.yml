@@ -12,3 +12,4 @@ packages_ubuntu:
     - python-pip
     - silversearcher-ag
 packages_fedora:
+    - the_silver_searcher
