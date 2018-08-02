@@ -12,8 +12,8 @@
       - dotfiles
 
   tasks:
-      - name: set default shell to zsh
-        user: name=sakjur shell=/usr/bin/zsh
+      - name: set default shell to fish
+        user: name=sakjur shell=/usr/bin/fish
         become: true
 
       - name: create projects directory

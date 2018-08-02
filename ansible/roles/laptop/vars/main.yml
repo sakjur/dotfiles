@@ -1,16 +1,14 @@
 ---
 packages:
     - vim
-    - zsh
+    - fish
     - tmux
     - git
     - mosh
     - tlp
     - powertop
-    - cowsay
 packages_ubuntu:
     - python-pip
     - silversearcher-ag
 packages_fedora:
     - the_silver_searcher
-    - lastpass-cli

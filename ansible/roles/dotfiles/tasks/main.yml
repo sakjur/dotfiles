@@ -2,9 +2,6 @@
 - name: set ~/.vimrc as a softlink to dotfiles
   file: dest=~/.vimrc src=~/.dotfiles/.vimrc state=link
 
-- name: set ~/.zshrc as a softlink to dotfiles
-  file: dest=~/.zshrc src=~/.dotfiles/.zshrc state=link
-
 - name: set ~/.tmux.conf as a softlink to dotfiles
   file: dest=~/.tmux.conf src=~/.dotfiles/.tmux.conf state=link
 
